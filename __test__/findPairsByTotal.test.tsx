@@ -8,6 +8,18 @@ describe('findNumberPairs', () => {
     expect(result).toEqual([])
   })
 
+  it('returns an array of number pairs that sum to the target', () => {
+    const numbers = [1, 9, 5, 0, 20, -4, 12, 16, 7]
+    const targetSum = 12
+    const result = findPairsByTotal(numbers, targetSum)
+
+    expect(result).toEqual([
+      [12, 0],
+      [16, -4],
+      [7, 5],
+    ])
+  })
+
   it('returns an empty array when given an empty input list', () => {
     const numbers: number[] = []
     const targetSum = 5
