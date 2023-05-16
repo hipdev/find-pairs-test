@@ -1,6 +1,6 @@
 'use client'
 
-import findPaisByTotal from '@/lib/findPairsByTotal'
+import findPairsByTotal from '@/lib/findPairsByTotal'
 import { FormEvent, useRef, useState } from 'react'
 
 export default function FindPairsForm() {
@@ -20,7 +20,7 @@ export default function FindPairsForm() {
       ? JSON.parse(numbersRef.current?.innerText)
       : []
 
-    const pairs = findPaisByTotal(numbers, total)
+    const pairs = findPairsByTotal(numbers, total)
 
     const pairsString = pairs
       .map((subarray) => subarray.join(', '))
