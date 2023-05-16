@@ -1,46 +1,13 @@
-import { demos } from '@/lib/demos';
-import Link from 'next/link';
+import FindPairsForm from './client/FindPairsForm'
 
 export default function Page() {
   return (
-    <div className="space-y-6">
-      <div className="space-y-8 text-white">
-        {demos
-          .filter((section) =>
-            section.items.some((x) => typeof x.isDisabled === 'undefined'),
-          )
-          .map((section) => {
-            return (
-              <div key={section.name} className="space-y-3">
-                <div className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
-                  {section.name}
-                </div>
+    <section className='h-screen flex items-center justify-center'>
+      <div className='bg-black/80 w-96 px-6 py-4 rounded-md shadow-lg pb-7 text-center'>
+        <h3 className='text-2xl font-semibold text-white/90'>Test case</h3>
 
-                <div className="grid grid-cols-2 gap-5">
-                  {section.items
-                    .filter((item) => !item.isDisabled)
-                    .map((item) => {
-                      return (
-                        <Link
-                          href={`/${item.slug}`}
-                          key={item.name}
-                          className="block space-y-1.5 rounded-lg border border-white/10 px-4 py-3 hover:border-white/20"
-                        >
-                          <div>{item.name}</div>
-
-                          {item.description ? (
-                            <div className="line-clamp-3 text-sm text-zinc-400">
-                              {item.description}
-                            </div>
-                          ) : null}
-                        </Link>
-                      );
-                    })}
-                </div>
-              </div>
-            );
-          })}
+        <FindPairsForm />
       </div>
-    </div>
-  );
+    </section>
+  )
 }

@@ -7,12 +7,6 @@
     "lint": "next lint",
     "format": "prettier --write \"**/*.{js,ts,tsx,md}\""
   },
-  "prettier": {
-    "arrowParens": "always",
-    "semi": true,
-    "trailingComma": "all",
-    "singleQuote": true
-  },
   "dependencies": {
     "clsx": "1.2.1",
     "next": "latest",
